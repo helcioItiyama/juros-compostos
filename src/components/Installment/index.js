@@ -20,7 +20,7 @@ export default function Installment({term, oldValue, monthlyFee, total}) {
       <div>
         <Value isNegative={isNegative}>{oldValue}</Value>
         <Value isNegative={isNegative}>{!isNegative ? `+${total}` : total}</Value>
-        <FeeValue letterColor={true}>{monthlyFee}</FeeValue>
+        <FeeValue isNegative={isNegative}>{monthlyFee}</FeeValue>
       </div>
     </Card>
   )

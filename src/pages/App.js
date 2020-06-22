@@ -29,7 +29,7 @@ function App() {
   useEffect(() => {
     if(fee < -12 || fee > 12 || value < 1 || value > 100000 || month < 1) {
       setErrorMessage(
-        `Ops, o valor digital ultrapassou o limite permitido`
+        `Ops, o valor digitado ultrapassou o limite permitido`
       );
       return;
     }
@@ -41,21 +41,21 @@ function App() {
     
     <h1>Juros Compostos</h1>
 
-      <Form 
-        onHandleValue={handleValue}
-        onHandleFee={handleFee}
-        onHandleTerm={handleTerm}
-        initialValue={value}
-        month={month}
-        fee={fee}
-        errorMessage={errorMessage}
-        />
+    <Form 
+      onHandleValue={handleValue}
+      onHandleFee={handleFee}
+      onHandleTerm={handleTerm}
+      initialValue={value}
+      month={month}
+      fee={fee}
+      errorMessage={errorMessage}
+    />
       
-      {!errorMessage && (
-        <FeeCard>
-          <Installments calculation={calculation}/>
-        </FeeCard>
-      )}
+    {!errorMessage && (
+      <FeeCard>
+        <Installments calculation={calculation}/>
+      </FeeCard>
+    )}
      
     </Container>
   );
