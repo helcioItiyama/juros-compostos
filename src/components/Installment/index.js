@@ -6,6 +6,7 @@ export default function Installment({term, oldValue, monthlyFee, total}) {
   
   useEffect(() => {
     const fee = monthlyFee.replace('%', '').replace(',', '.');
+    
     if(+fee < 0) {
       setIsNegative(true)
       return;

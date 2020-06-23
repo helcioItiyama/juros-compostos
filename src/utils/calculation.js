@@ -5,12 +5,9 @@ export function feeCalculation (value, fee, term) {
   const initialValue = value;
 
   for(let i = 1; i <= term ; i++) {
-    let currentValue = 0;
-    let calculationObject = {};
+    const currentValue = value + value * fee/100;
 
-    currentValue = value + value * fee/100;
-
-    calculationObject = {
+    const calculationObject = {
       term: i,
       oldValue: moneyFormat(currentValue),
       monthlyFee: numberFormat((currentValue * 100 /initialValue - 100).toFixed(2)) + '%',

@@ -39,23 +39,23 @@ function App() {
   return (
     <Container className="App">
     
-    <h1>Juros Compostos</h1>
+      <h1>Juros Compostos</h1>
 
-    <Form 
-      onHandleValue={handleValue}
-      onHandleFee={handleFee}
-      onHandleTerm={handleTerm}
-      initialValue={value}
-      month={month}
-      fee={fee}
-      errorMessage={errorMessage}
-    />
-      
-    {!errorMessage && (
-      <FeeCard>
-        <Installments calculation={calculation}/>
-      </FeeCard>
-    )}
+      <Form 
+        onHandleValue={handleValue}
+        onHandleFee={handleFee}
+        onHandleTerm={handleTerm}
+        initialValue={value}
+        month={month}
+        fee={fee}
+        errorMessage={errorMessage}
+      />
+        
+      {!errorMessage && (
+        <FeeCard>
+          <Installments calculation={calculation}/>
+        </FeeCard>
+      )}
      
     </Container>
   );
