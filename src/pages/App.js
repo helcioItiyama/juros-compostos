@@ -9,6 +9,7 @@ function App() {
   const [ value, setValue ] = useState(1000);
   const [ fee, setFee ] = useState(0.5);
   const [ month, setMonth ] = useState(1);
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleValue = (event) => {
     setValue(+event.target.value);
@@ -23,8 +24,6 @@ function App() {
   }
 
   let calculation = feeCalculation(value, fee, month);
-
-  const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
     if(fee < -12 || fee > 12 || value < 1 || value > 100000 || month < 1) {
